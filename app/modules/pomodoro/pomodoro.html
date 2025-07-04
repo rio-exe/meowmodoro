@@ -1,0 +1,277 @@
+<div class="date-time">
+    03/23/2025<br>
+    <span class="small-time">10:21:22</span>
+  </div>
+
+  <div class="sidebar">
+    <div class="sidebar-square"></div>
+    <div class="sidebar-square"></div>
+    <div class="sidebar-square"></div>
+  </div>
+
+  <div class="container">
+    <div class="goal-section">
+      Today's Goal: <input type="text" value="5">
+    </div>
+
+    <div class="mode-buttons">
+      <button>Pomodoro</button>
+      <button>Short Break</button>
+      <button>Long Break</button>
+    </div>
+
+    <div class="timer">
+      <div class="left">
+        <div class="play-button">▶</div>
+        <div>Timer 1</div>
+      </div>
+      <div class="right">
+        #1/5
+      </div>
+    </div>
+
+    <div class="progress-bar-container">
+      <div class="small-icon"></div>
+      <div class="progress-bar">
+        <div class="progress-fill"></div>
+      </div>
+      <div class="small-icon" style="background-color: tomato;"></div>
+    </div>
+
+    <div class="task-input">
+      <input type="text" placeholder="Add a new task...">
+      <button>+</button>
+    </div>
+
+    <div class="task-list">
+      <strong>To do:</strong>
+      <div class="task-item">
+        <span>Study chemistry</span>
+        <div class="task-actions">
+          <div>1/5</div>
+          <div class="check">✔</div>
+          <div class="delete">🗑</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="done-list">
+      <strong>Done:</strong>
+      <div class="done-item">
+        <span>Study chemistry</span>
+        <div>5/5 ✔</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="top-tomato">
+    <div style="width: 20px; height: 20px; background-color: tomato; border-radius: 50%;"></div>
+    <div>12</div>
+  </div>
+
+  <button onclick="test()">Test</button>
+
+    <style>
+    body {
+      margin: 0;
+      padding: 20px;
+      background-color: #2e2e2e;
+      color: white;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    .date-time {
+      font-size: 2em;
+    }
+
+    .small-time {
+      font-size: 0.5em;
+    }
+
+    .sidebar {
+      position: fixed;
+      top: 100px;
+      left: 10px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .sidebar-square {
+      width: 40px;
+      height: 40px;
+      border-radius: 8px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: #555;
+      cursor: pointer;
+    }
+
+    .sidebar-square:nth-child(1) { background-color: tomato; }
+    .sidebar-square:nth-child(2) { background-color: pink; }
+    .sidebar-square:nth-child(3) { background-color: lightblue; }
+
+    .container {
+      margin-left: 80px;
+      max-width: 500px;
+    }
+
+    .goal-section {
+      margin-top: 20px;
+      font-size: 1.8em;
+    }
+
+    .goal-section input {
+      width: 40px;
+      padding: 5px;
+      border-radius: 5px;
+      border: none;
+      text-align: center;
+    }
+
+    .mode-buttons {
+      display: flex;
+      gap: 10px;
+      margin-top: 10px;
+    }
+
+    .mode-buttons button {
+      flex: 1;
+      padding: 10px;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      background-color: #f1f1f1;
+      color: black;
+    }
+
+    .timer {
+      display: flex;
+      margin-top: 20px;
+      background-color: #fff;
+      color: black;
+      border-radius: 8px;
+      padding: 20px;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .timer .left {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .timer .left .play-button {
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      background-color: #ccc;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 1.5em;
+    }
+
+    .timer .right {
+      font-size: 2em;
+    }
+
+    .progress-bar-container {
+      margin-top: 20px;
+      display: flex;
+      align-items: center;
+    }
+
+    .progress-bar {
+      flex: 1;
+      height: 10px;
+      background-color: #444;
+      border-radius: 5px;
+      margin: 0 10px;
+      position: relative;
+    }
+
+    .progress-fill {
+      height: 10px;
+      background-color: tomato;
+      width: 30%;
+      border-radius: 5px;
+    }
+
+    .small-icon {
+      width: 20px;
+      height: 20px;
+      background-color: pink;
+      border-radius: 50%;
+    }
+
+    .task-input {
+      margin-top: 10px;
+      display: flex;
+    }
+
+    .task-input input {
+      flex: 1;
+      padding: 8px;
+      border-radius: 6px;
+      border: none;
+    }
+
+    .task-input button {
+      padding: 8px 12px;
+      margin-left: 5px;
+      border: none;
+      border-radius: 6px;
+      background-color: #f1f1f1;
+      cursor: pointer;
+    }
+
+    .task-list, .done-list {
+      margin-top: 10px;
+    }
+
+    .task-item, .done-item {
+      background-color: #444;
+      padding: 8px;
+      border-radius: 6px;
+      margin-top: 5px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .done-item {
+      background-color: #00e676;
+    }
+
+    .task-actions {
+      display: flex;
+      gap: 5px;
+    }
+
+    .check {
+      background-color: #4caf50;
+      padding: 5px 8px;
+      border-radius: 4px;
+    }
+
+    .delete {
+      background-color: #f44336;
+      padding: 5px 8px;
+      border-radius: 4px;
+    }
+
+    .top-tomato {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      background-color: tomato;
+      border-radius: 8px;
+      padding: 8px 12px;
+      display: flex;
+      align-items: center;
+      gap: 5px;
+    }
+  </style>
