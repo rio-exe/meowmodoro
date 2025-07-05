@@ -15,10 +15,10 @@ export default class View {
             this.runController();
         }).catch((textError) => {
             // ERROR WHILE READING FILE
-            console.error("An error occurred while getting file: " + this.html + ". Details: " + textError.getMessage());
+            console.error("An error occurred while getting file: " + this.html + ". Details: " + textError);
         }).catch((fetchError) => {
             // ERROR WHILE GETTING FILE
-            console.error("An error occurred while getting file: " + this.html + ". Details: " + textError.getMessage());
+            console.error("An error occurred while getting file: " + this.html + ". Details: " + fetchError);
         }));
     }
 
