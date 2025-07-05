@@ -9,27 +9,25 @@ export default class View {
     }
 
     render() {
-        // RENDER THE MODULE
-
-        // READ THE HTML FILE
         fetch(this.html).then(response => response.text().then((result) => {
-            // INJECT RESULT INTO MAIN DIV
             document.getElementById("app").innerHTML = result;
-            console.log("MODULE WAS SUCCESSFULLY RENDERED!");
-
         }).then(() => {
             this.runController();
         }).catch((textError) => {
             // ERROR WHILE READING FILE
-            console.log("An error occurred while getting file: " + this.html);
+            console.error("An error occurred while getting file: " + this.html + ". Details: " + textError.getMessage());
         }).catch((fetchError) => {
             // ERROR WHILE GETTING FILE
-            console.log("An error occurred while getting file: " + this.html);
+            console.error("An error occurred while getting file: " + this.html + ". Details: " + textError.getMessage());
         }));
+    }
 
-        // TAKE THE MAIN APP DIV
+    get getController() {
+        return this.controller;
+    }
 
-        // INJECT THE VIEW INSIDE IT
+    get getHtml() {
+        return this.html;
     }
 
     runController() {
