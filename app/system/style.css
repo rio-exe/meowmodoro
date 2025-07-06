@@ -1,0 +1,5 @@
+/* THIS FILE WILL BE LOADED INTO ALL PAGES */
+
+body {
+    background-color: rgb(63, 63, 63);
+}

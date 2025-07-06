@@ -5,6 +5,12 @@ class Router {
     endpoints = new Map();
     defaultController = undefined;
 
+    constructor() {
+        window.addEventListener("popstate", (event) => {
+            this.load();
+        });
+    }
+
     load() {
         const endpoint = window.location.pathname;
         let endpointController;
@@ -31,10 +37,8 @@ class Router {
     }
 
     navigate(endpoint) {
-
         history.pushState({}, '', endpoint);
         this.load();
-
     }
 
 }

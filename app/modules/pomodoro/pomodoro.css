@@ -1,0 +1,45 @@
+  body {
+    margin: 0;
+    height: 100vh;
+    background: linear-gradient(135deg, #006eff, #ffffff);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    font-family: 'Segoe UI', sans-serif;
+  }
+
+  .loader-card {
+    background: #f8f9fb;
+    border-radius: 16px;
+    padding: 40px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+    text-align: center;
+    animation: pulse 2.5s infinite ease-in-out;
+    max-width: 280px;
+  }
+
+  .loader-card img {
+    width: 150px;
+    height: auto;
+    display: block;
+    margin: 0 auto 20px;
+    filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.1));
+  }
+
+  .loader-text {
+    font-size: 1.2rem;
+    color: #3c4b5a;
+    letter-spacing: 0.4px;
+  }
+
+  @keyframes pulse {
+    0%, 100% {
+      transform: scale(1);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+    }
+    50% {
+      transform: scale(1.03);
+      box-shadow: 0 12px 24px rgba(0,0,0,0.15);
+    }
+  }
