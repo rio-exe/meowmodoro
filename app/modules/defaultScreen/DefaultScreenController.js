@@ -1,5 +1,3 @@
-import Router from "/app/system/router/Router.js";
-
 export default class DefaultScreenController {
 
     html = undefined;
@@ -11,10 +9,6 @@ export default class DefaultScreenController {
     }
 
     run() {
-        
-        document.getElementById("goHomeButton").addEventListener("click", () => {
-            Router.RouterInstance.navigate("/");
-        });
 
     }
 
